@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -12,51 +12,51 @@
 }
 
 .left-brackets {
- font-size:22em;
- margin-right:100px;
- color:rgb(234, 233, 233);
- text-shadow: 1px 1px 2px pink;
- animation: bracket_appear 1.3s 1s ease-in-out forwards;
- transform-origin: center;
- transform:rotateZ(180deg);
- opacity: 0;
-}
-
-.right-brackets {
-  font-size:22em;
-  margin-left:100px;
-  color:rgb(234, 233, 233);
+  font-size: 22em;
+  margin-right: 100px;
+  color: rgb(234, 233, 233);
   text-shadow: 1px 1px 2px pink;
   animation: bracket_appear 1.3s 1s ease-in-out forwards;
   transform-origin: center;
-  transform:rotateZ(-180deg);
+  transform: rotateZ(180deg);
   opacity: 0;
- }
+}
 
- @keyframes bracket_appear {
+.right-brackets {
+  font-size: 22em;
+  margin-left: 100px;
+  color: rgb(234, 233, 233);
+  text-shadow: 1px 1px 2px pink;
+  animation: bracket_appear 1.3s 1s ease-in-out forwards;
+  transform-origin: center;
+  transform: rotateZ(-180deg);
+  opacity: 0;
+}
+
+@keyframes bracket_appear {
   100% {
-    transform:rotateX(0deg);
+    transform: rotateX(0deg);
     opacity: 1;
   }
 }
 
 .bio-info-container {
-  text-align:center;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:500px;
-  max-height:200px;
-  margin-top:25px;
+  width: 500px;
+  max-height: 200px;
+  margin-top: 25px;
 }
 
-.title-border{
+.title-border {
   position: relative;
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: white;
   text-shadow: 1px 1px 2px pink;
   font-size: 3.5rem;
@@ -78,7 +78,7 @@ h1 {
   left: 50%;
   bottom: -5px;
   width: 0;
-  border-bottom: solid 2px #FFFF;
+  border-bottom: solid 2px #ffff;
   position: absolute;
   transform: translateX(-50%);
   animation: border_anim 1s linear forwards;
@@ -106,8 +106,8 @@ h1 {
 }
 
 .bio-text {
-  color:rgb(234, 233, 233);
-  font-size:1.5rem;
+  color: rgb(234, 233, 233);
+  font-size: 1.5rem;
   text-shadow: 1px 1px 2px pink;
   /* margin-top:60px; */
   opacity: 0;
@@ -118,4 +118,94 @@ h1 {
   100% {
     opacity: 1;
   }
+}
+
+.portfolio-icons {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-my {
+  transform: scale(0);
+  opacity: 0;
+  animation: grow 0.5s 1.5s linear forwards;
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.fa-rocket {
+  position: absolute;
+  bottom: 5%;
+  right: 50%;
+  transform: rotateZ(0deg);
+  animation: move_bottom_side 8s 2.2s linear infinite;
+  opacity: 0;
+}
+
+@keyframes move_bottom_side {
+  20% {
+    transform: rotateZ(0deg);
+    right: 0;
+    bottom: 50%;
+    opacity: 1;
+  }
+
+  25% {
+    transform: rotateZ(-90deg);
+  }
+
+  45% {
+    transform: rotateZ(-90deg);
+    right: 50%;
+    bottom: 100%;
+  }
+
+  50% {
+    transform: rotateZ(-180deg);
+  }
+
+  70% {
+    transform: rotateZ(-180deg);
+    right: 100%;
+    bottom: 50%;
+  }
+
+  75% {
+    transform: rotateZ(-270deg);
+  }
+
+  95% {
+    transform: rotateZ(-270deg);
+    right: 50%;
+    bottom: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+    opacity: 0;
+  }
+}
+
+a {
+  color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(189, 189, 189);
+  transform: scale(1.1);
 }

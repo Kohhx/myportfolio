@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Biography.css";
 import Fullview from "../Shared/Fullview";
 import Avatar from "../Shared/Avatar";
@@ -6,8 +7,14 @@ import Avatar from "../Shared/Avatar";
 import BgImage from "../Images/background.jpg";
 import ProfilPic from "../Images/profilepic.jpg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fab, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
+
 const Biography = () => {
   const [showBio, setShowBio] = useState(false);
+
+  console.log(Link);
 
   // const showBioHandler = () => setShowBio(!showBio)
 
@@ -53,7 +60,15 @@ const Biography = () => {
         {showBio ? profileBioJSX : profilePicJSX}
         <span className="right-brackets">{`}`}</span>
       </div>
-      <span></span>
+      <div className="portfolio-icons">
+        <a href="https://github.com/Kohhx">
+          <FontAwesomeIcon className="fa-my" icon={faGithub} />
+        </a>
+        <a href="https://www.linkedin.com/in/kohhx/">
+          <FontAwesomeIcon className="fa-my" icon={faLinkedin} />
+        </a>
+        <FontAwesomeIcon className="fa-rocket" icon={faRocket} />
+      </div>
     </Fullview>
   );
 };
